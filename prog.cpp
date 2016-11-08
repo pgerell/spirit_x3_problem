@@ -1,6 +1,3 @@
-#include <vector>
-#include "ast.hpp"
-#include "boost/spirit/home/x3.hpp"
 #include "common.hpp"
 
 int main() {

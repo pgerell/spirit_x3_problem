@@ -4,7 +4,7 @@ namespace x3 = boost::spirit::x3;
 
 typedef std::string::const_iterator iterator_type;
 
-// This is set only when ast.h is included from ast_adapted.h, which is an internal header
+// This is set only when ast.hpp is included from ast_adapted.hpp, which is an internal header
 #ifndef FUSION_DEFINE_FOR_STRUCT
 #define FUSION_DEFINE_FOR_STRUCT(...)
 #endif

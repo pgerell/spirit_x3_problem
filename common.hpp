@@ -1,7 +1,6 @@
 #pragma once
 
-#include "boost/spirit/home/x3.hpp"
-#include "ast.hpp"
+#include "ast_adapted.hpp"
 
 struct start_class;
 using start_type = x3::rule<start_class, ast::Start>;
