@@ -7,18 +7,26 @@ BOOST_SPIRIT_INSTANTIATE(start_type, iterator_type, x3::unused_type);
 #define EXPLICT_SPECIALIZATION_FROM_LINKER_ERROR_MSG
 #ifdef EXPLICT_SPECIALIZATION_FROM_LINKER_ERROR_MSG
 template<>
-bool parse_rule<std::__1::__wrap_iter<char const*>, boost::spirit::x3::unused_type, ast::Start>(boost::spirit::x3::rule<count_class, ast::Count, false>, std::__1::__wrap_iter<char const*>&, std::__1::__wrap_iter<char const*> const&, boost::spirit::x3::unused_type const&, ast::Start&)
-{ return false;
-}
+bool parse_rule<std::__1::__wrap_iter<char const*>, boost::spirit::x3::unused_type, ast::Start>(boost::spirit::x3::rule<start_class, ast::Start, false>, std::__1::__wrap_iter<char const*>&, std::__1::__wrap_iter<char const*> const&, boost::spirit::x3::unused_type const&, ast::Start&)
+;
 //^Purpose:
-//  Simply copy&paste error message from linker below to see if
-//  this will satisfy linker.
+//  Simply copy&pasted name of undefined reference in
+//  the linker error message below
+//  to see if this will satisfy linker.
 //ModificationsAfterCopy&Paste:
 //  Added:
 //    template<>
-//  prefix.
+//  prefix after compiler complained:
+/*
+common.cpp:10:6: error: template specialization requires 'template<>'
+*/
 //Result:
-//  Link succeeds:
+//  Same link error as before:
+/*
+undefined reference to `
+bool parse_rule<std::__1::__wrap_iter<char const*>, boost::spirit::x3::unused_type, ast::Start>(boost::spirit::x3::rule<start_class, ast::Start, false>, std::__1::__wrap_iter<char const*>&, std::__1::__wrap_iter<char const*> const&, boost::spirit::x3::unused_type const&, ast::Start&)
+'
+ */
 //======================================== 
 #endif//EXPLICT_SPECIALIZATION_FROM_LINKER_ERROR_MSG
 
