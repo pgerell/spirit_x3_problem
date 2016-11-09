@@ -2,7 +2,7 @@
 #include "ast_adapted.hpp"
 #include "common_def.hpp"
 using start_decl=decltype(start);//mimic what BOOST_SPIRIT_DEFINE_ does.
-BOOST_SPIRIT_INSTANTIATE(start_decl, iterator_type, x3::unused_type);
+//BOOST_SPIRIT_INSTANTIATE(start_decl, iterator_type, x3::unused_type);
 
 #define EXPLICT_SPECIALIZATION_FROM_LINKER_ERROR_MSG
 #ifdef EXPLICT_SPECIALIZATION_FROM_LINKER_ERROR_MSG
