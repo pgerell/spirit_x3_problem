@@ -26,7 +26,10 @@ bool parse_rule<std::__1::__wrap_iter<char const*>, boost::spirit::x3::unused_ty
 common.cpp:10:6: error: template specialization requires 'template<>'
 */
 //Result:
-//  Same link error as before:
+//  If !defined(EXPLICIT_DEFINE_SPECIALIZATION_FROM_LINKER_ERROR_MSG) 
+//    then same link error as before.
+//  Else
+//    link succeeds.
 /*
 undefined reference to `
 bool parse_rule<std::__1::__wrap_iter<char const*>, boost::spirit::x3::unused_type, ast::Start>(boost::spirit::x3::rule<start_class, ast::Start, false>, std::__1::__wrap_iter<char const*>&, std::__1::__wrap_iter<char const*> const&, boost::spirit::x3::unused_type const&, ast::Start&)
