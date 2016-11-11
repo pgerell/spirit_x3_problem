@@ -3,3 +3,7 @@
 #include "expression_def.hpp"
 
 BOOST_SPIRIT_INSTANTIATE(count_type, iterator_type, x3::unused_type);
+
+const count_type& count_rule() {
+  return count;
+}
