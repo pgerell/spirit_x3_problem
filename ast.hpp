@@ -28,7 +28,12 @@ namespace ast {
   
  
 }
-// This is set only when ast.hpp is included from ast_adapted.hpp, which is an internal header
+//WHAT:
+// This following macro is set only when ast.hpp is included from ast_adapted.hpp, 
+// which is an internal header only #included by .cpp files.
+//WHY:
+// Save some rather heavy macro processing which is only
+// needed in the .cpp files.
 #ifndef FUSION_DEFINE_FOR_STRUCT
 #define FUSION_DEFINE_FOR_STRUCT(...)
 #endif
