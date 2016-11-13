@@ -1,3 +1,4 @@
+//#define BOOST_SPIRIT_X3_DEBUG
 //#define USE_ONLY_DEFS
 #ifdef USE_ONLY_DEFS
   //Purpose:
@@ -50,10 +51,23 @@ ast.hpp:22:10: note:   no known conversion for argument 1 from ‘std::remove_re
 
 int main() {
   std::string input = "c123";
+  std::cout<<"from function("<<__func__<<")\n";
+  std::cout<<":input="<<input<<".\n";
   iterator_type iter = input.cbegin();
   iterator_type end = input.cend();
   ast::Start attr;
   bool result=x3::parse(iter, end, start_rule(), attr);
-  std::cout<<__func__<<":result="<<result<<":iter="<<*iter<<"\n";
-  return result;
+  std::cout<<":result="<<result<<".\n";
+  std::cout<<":attr=\n{\n";
+#ifdef KEEP_CHAR
+    std::cout<<"  :ch="<<attr.ch<<"\n";
+#endif
+    std::cout<<"  :count="<<attr.count.value<<"\n";
+  std::cout<<"}.\n";  
+  std::cout<<":remaining input=\n{\n";
+  for(;iter!=end; ++iter)
+    { std::cout<<*iter;
+    }
+  std::cout<<"}.\n";
+  return 0;
 }
