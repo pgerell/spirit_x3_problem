@@ -4,8 +4,8 @@
 
 BOOST_SPIRIT_INSTANTIATE(count_type, iterator_type, x3::unused_type);
 
-#if 1
-//Workaround the link problem:
+#ifndef KEEP_CHAR
+  //Workaround the link problem:
     template bool parse_rule<iterator_type, x3::unused_type, ast::Start>( 
         count_type rule_                                                         
       , iterator_type& first, iterator_type const& last                          
